@@ -181,7 +181,10 @@ exports.getTransactionStruct = async (req, res) => {
 
     res.send({
       status: "success",
-      data,
+      struct: { data: data, products: data.products },
+      // producttransaction: data.products.producttransaction,
+      // struct: producttransaction.qty,
+      // qtyProduct: "producttransaction.qty",
     });
   } catch (error) {
     console.log(error);
